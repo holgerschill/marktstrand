@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marktstrand Heide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, html {
+          height: 100%;
+          font-family: 'Open Sans', sans-serif;
+          scroll-behavior: smooth;
+        }
+        .video-bg {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -2;
+          overflow: hidden;
+        }
+        .video-bg video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .logo-wrapper {
+        position: fixed;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+        transition: all 3s ease;
+        text-align: center;
+      }
+
+      .logo {
+        width: 300px;
+        transition: all 1s ease;
+      }
+
+      /* Zustand bei Scroll */
+      .logo-wrapper.scrolled {
+        top: 50px;
+        left: 50px;
+        transform: translate(0, 0);
+        width: auto;
+        text-align: left;
+      }
+
+      .logo-wrapper.scrolled .logo {
+        width: 150px;
+      }
+
+      .logo-overlay {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      color: white;
+      transition: all 0.6s ease;
+      animation: fadeInUp 3s;
+    }
+
+    .logo-wrapper.scrolled .logo-overlay {
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #f0c000;
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.5);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    section {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 4rem 2rem;
+      position: relative;
+      z-index: 1;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      
+    }
+    .gallery img {
+      width: 250px;
+      margin: 1rem;
+      border-radius: 10px;
+    }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<header>
+  <div class="overlay">
+   
+  </div>
+</header>
+<body>
+  <div class="video-bg">
+    <video autoplay   loop >
+      <source src="video_mit_musik_weboptimiert.mp4" type="video/mp4">
+      Dein Browser unterstützt kein HTML5 Video.
+    </video>
+  </div>
+
+  <div class="logo-wrapper">
+    <img src="logo.png" alt="Marktstrand Heide Logo" class="logo">
+    <div class="logo-overlay">
+      <p>Sonne. Sand. Cocktails. Musik.</p>
+    </div>
+  </div>
+  <nav>
+    <a href="#speisekarte">Speisekarte</a>
+    <a href="#events">Events</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#impressum">Impressum</a>
+  </nav>
+
+  
+
+  <section class="speisekarte" id="speisekarte">
+    <h2>🍹 Unsere Speisekarte</h2>
+    <p>Hier findest du alle Getränke und Speisen im Überblick:</p>
+    <a href="Speisekarte_Marktstrand 2025.pdf" target="_blank" rel="noopener" style="
+    display: inline-block;
+    background-color: #222;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 1rem;
+  ">📄 Speisekarte öffnen</a>
+  </section>
+
+  <section class="events" id="events">
+    <h2>📆 Kommende Events</h2>
+    <p>Beachvolleyball, Live-DJs und mehr!</p>
+    <p>Mehr folgt in Kürze!</p>
+  </section>
+
+  <section class="gallery" id="galerie">
+    <h2>📸 Impressionen</h2>
+    <img src="bilder/heider-marktstrand.jpg" alt="Beach">
+    <img src="bilder/heider-marktstrand_1.jpg" alt="Sommer">
+    <img src="bilder/heider-marktstrand_2.jpg" alt="Sommer">
+    <img src="bilder/heider-marktstrand_3.jpg" alt="Sommer">
+    <img src="bilder/heider-marktstrand_4.jpg" alt="Sommer">
+    <img src="bilder/heider-marktstrand_5.jpg" alt="Sommer">
+    <img src="bilder/heider-marktstrand_6.jpg" alt="Sommer">
+    <img src="bilder/heider-marktstrand_7.jpg" alt="Sommer">
+    <img src="bilder/heider-marktstrand_8.jpg" alt="Sommer">
+    <img src="bilder/heider-marktstrand_9.jpg" alt="Sommer">
+    <img src="bilder/heider-marktstrand_10.jpg" alt="Sommer">
+    <img src="bilder/heider-marktstrand_11.jpg" alt="Sommer">
+    <img src="bilder/heider-marktstrand_12.jpg" alt="Sommer">
+    <img src="bilder/heider-marktstrand_13.jpg" alt="Sommer">
+  </section>
+  <section id="impressum">
+    <h2>📄 Impressum</h2>
+    <p><strong>Marktstrand Heide</strong><br>
+    Musterstraße 1<br>
+    25746 Heide<br>
+    Deutschland</p>
+  
+    <p><strong>Vertreten durch:</strong><br>
+    Max Mustermann</p>
+  
+    <p><strong>Kontakt:</strong><br>
+    Telefon: +49 (0)481 123456<br>
+    E-Mail: <a href="mailto:info@marktstrand-heide.de">info@marktstrand-heide.de</a></p>
+  
+    <p><strong>Umsatzsteuer-ID:</strong><br>
+    DE123456789</p>
+  
+    <p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>
+    Max Mustermann, Musterstraße 1, 25746 Heide</p>
+  
+    <p><strong>Haftungsausschluss:</strong><br>
+    Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+  </section>
+  
+  <footer>
+    <p>&copy; 2025 Marktstrand Heide – Alle Rechte vorbehalten</p>
+  </footer>
+  <script>
+    const logoWrapper = document.querySelector('.logo-wrapper');
+    let lastScroll = 0;
+  
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+  
+      if (currentScroll > 50) {
+        logoWrapper.classList.add('scrolled');
+      } else {
+        logoWrapper.classList.remove('scrolled');
+      }
+  
+      lastScroll = currentScroll;
+    });
+  </script>
+</body>
+</html>
