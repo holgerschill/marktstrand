@@ -36,7 +36,19 @@
         transition: all 3s ease;
         text-align: center;
       }
-
+      #audioButton {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+    padding: 0.6rem 1rem;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
       .logo {
         width: 300px;
         transition: all 1s ease;
@@ -136,6 +148,7 @@
   </div>
 </header>
 <body>
+  <button id="audioButton">🔊 Audio aktivieren</button>
   <div class="video-bg">
     <video playsinline autoplay muted loop id="vid">
       <source src="video_mit_musik_weboptimiert.mp4" type="video/mp4">
@@ -238,6 +251,20 @@
   
       lastScroll = currentScroll;
     });
+    const video = document.getElementById('vid');
+  const button = document.getElementById('audioButton');
+
+  button.addEventListener('click', () => {
+    if (video.muted) {
+      video.muted = false;
+      video.volume = 1.0;
+      button.textContent = '🔇 Audio deaktivieren';
+    } else {
+      video.muted = true;
+      button.textContent = '🔊 Audio aktivieren';
+    }
+  });
   </script>
+  
 </body>
 </html>
