@@ -239,7 +239,11 @@
       lastScroll = currentScroll;
     });
     window.onload = function(){
-      document.getElementById("vid").play()
+      var video = document.getElementById("vid");
+      video.oncanplaythrough = function() {
+      video.muted = true;
+      video.play();
+    }
     }
   </script>
 </body>
