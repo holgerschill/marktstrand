@@ -140,16 +140,6 @@
       position: relative;
       z-index: 1;
     }
-    .fade-in-left {
-      opacity: 0;
-      transform: translateX(-300px);
-      transition: opacity 2s ease, transform 2s ease;
-    }
-
-    .fade-in-left.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
   </style>
 </head>
 <header>
@@ -181,7 +171,7 @@
 
   
 
-  <section class="speisekarte fade-in-left" id="speisekarte">
+  <section class="speisekarte" id="speisekarte">
     <h2>🍹 Unsere Speisekarte</h2>
     <p>Hier findest du alle Getränke und Speisen im Überblick:</p>
     <a href="Speisekarte_Marktstrand 2025.pdf" target="_blank" rel="noopener" style="
@@ -196,7 +186,7 @@
   ">📄 Speisekarte öffnen</a>
   </section>
 
-  <section class="events fade-in-left" id="events">
+  <section class="events" id="events">
     <h2>📆 Kommende Events</h2>
     <p>Dienstag, 20. May 2025	Dienstag	Softopening mit DJ Loco</p>
     <p>Donnerstag, 22. May 2025	Donnerstag	17-20 Uhr Happy Hour alle Cotails 1€ günstiger, Redfire zum 1/2 Preis 19-21 Uhr DJ ApTEx</p>
@@ -212,7 +202,7 @@
 
   </section>
 
-  <section class="gallery fade-in-left" id="galerie">
+  <section class="gallery" id="galerie">
     <h2>📸 Impressionen</h2>
     <img src="bilder/heider-marktstrand.jpg" alt="Beach">
     <img src="bilder/heider-marktstrand_1.jpg" alt="Sommer">
@@ -267,36 +257,18 @@
       lastScroll = currentScroll;
     });
     const video = document.getElementById('vid');
-    const button = document.getElementById('audioButton');
+  const button = document.getElementById('audioButton');
 
-    button.addEventListener('click', () => {
-      if (video.muted) {
-        video.muted = false;
-        video.volume = 1.0;
-        button.textContent = '🔇 Audio deaktivieren';
-      } else {
-        video.muted = true;
-        button.textContent = '🔊 Audio aktivieren';
-      }
-    });
-    const faders = document.querySelectorAll('.fade-in-left');
-
-    const appearOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
-    };
-
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
+  button.addEventListener('click', () => {
+    if (video.muted) {
+      video.muted = false;
+      video.volume = 1.0;
+      button.textContent = '🔇 Audio deaktivieren';
+    } else {
+      video.muted = true;
+      button.textContent = '🔊 Audio aktivieren';
+    }
+  });
   </script>
   
 </body>
